@@ -1,0 +1,13 @@
+#!/bin/bash
+
+if [[ $# -ne 1 ]]; then
+	echo "mauvaise utilisation"
+	exit 1
+fi
+NUMBER=$1
+
+for (( i=0; i<$NUMBER; i++)) do
+	./wclient 127.0.0.1 10000 /spin.cgi?5 &
+done
+wait
+exit 0
